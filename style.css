@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Fredoka', sans-serif;
+  background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: auto;
+}
+
+.container {
+  text-align: center;
+  background: white;
+  border-radius: 25px;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  max-width: 95vw;
+}
+
+.title {
+  color: #9c27b0;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.start-btn {
+  background-color: #ba68c8;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.start-btn:hover {
+  background-color: #ab47bc;
+}
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(10, minmax(20px, 1fr));
+  gap: 3px;
+  margin: 10px auto;
+  background-color: #fce4ec;
+  padding: 8px;
+  border-radius: 15px;
+  max-width: 95vw;
+}
+
+.cell {
+  aspect-ratio: 1 / 1;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: inset 0 0 3px #ccc;
+  width: 100%;
+}
+
+#pieces {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.piece {
+  display: grid;
+  grid-template-columns: repeat(3, 20px);
+  grid-template-rows: repeat(3, 20px);
+  gap: 2px;
+  cursor: grab;
+}
+
+.block {
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+}
+
+.color1 { background-color: #f48fb1; }
+.color2 { background-color: #ce93d8; }
+.color3 { background-color: #81d4fa; }
+.color4 { background-color: #a5d6a7; }
+.color5 { background-color: #fff59d; }
+
+#score {
+  font-size: 1.2rem;
+  color: #7b1fa2;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+#message {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ab47bc;
+  background: white;
+  padding: 20px 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#message.show {
+  opacity: 1;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Key Jueblock</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#ba68c8">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Key Jueblock</h1>
+    <div id="game-area" class="hidden">
+      <div id="score">Puntos: 0</div>
+      <div id="board" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
+      <div id="pieces"></div>
+    </div>
+    <button class="start-btn" id="startBtn" onclick="startGame()">Jugar</button>
+  </div>
+
+  <div id="message" class="hidden">¡Genial!</div>
+
+  <audio id="snd-place" src="sounds/place.mp3"></audio>
+  <audio id="snd-clear" src="sounds/clear.mp3"></audio>
+  <audio id="snd-lose" src="sounds/lose.mp3"></audio>
+
+  <script src="script.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(reg => console.log("✅ SW registrado"))
+        .catch(err => console.error("❌ Error SW", err));
+    }
+  </script>
+</body>
+</html>
